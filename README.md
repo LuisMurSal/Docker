@@ -19,3 +19,27 @@ Docker es una plataforma que permite crear, desplegar y ejecutar aplicaciones en
 2. **Instalar dependencias:**
    ```bash
    sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+3. **Añadir la clave GPG de Docker:**
+   ```bash
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+4. **Añadir el repositorio de Docker:**
+   ```bash
+   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+5. **Instalar Docker:**
+   ```bash
+   sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
+6. **Verificar instalación:**
+   ```bash
+   docker --version
+## Aplicaciones para instalar con Docker
+
+## 1. CodeLink
+
+   CodeLink es una herramienta para gestionar y visualizar código colaborativamente.
+   
+1. Crear y ejecutar el contenedor:
+   ```bash
+   docker run -d --name codelink -p 8080:80 codelink/codelink:latest
+2. Acceder desde el navegador: http://localhost:8080
+
+## 2. Kanboard

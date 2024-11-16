@@ -63,4 +63,6 @@ Docker es una plataforma que permite crear, desplegar y ejecutar aplicaciones en
 ## Notas al crear los contenedores
 
 -Asegúrate de que los puertos (8080, 8081, 8082) estén libres antes de iniciar los contenedores.
+-Puedes usar otros puertos, estan a tu disposición mientras esten libres
+
 

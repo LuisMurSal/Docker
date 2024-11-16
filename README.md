@@ -43,3 +43,24 @@ Docker es una plataforma que permite crear, desplegar y ejecutar aplicaciones en
 2. Acceder desde el navegador: http://localhost:8080
 
 ## 2. Kanboard
+
+   Kanboard es una herramienta de gestión de proyectos basada en tableros Kanban.
+   
+1. Crear y ejecutar el contenedor:
+   ```bash
+   docker run -d --name kanboard -p 8081:80 kanboard/kanboard:latest
+2. Acceder desde el navegador: http://localhost:8081
+
+## 3. Excalidraw
+
+   Excalidraw es una aplicación de dibujo colaborativo para diagramas y bocetos.
+   
+1. Crear y ejecutar el contenedor:
+   ```bash
+   docker run -d --name excalidraw -p 8082:5000 excalidraw/excalidraw:latest
+2. Acceder desde el navegador: http://localhost:8082
+
+## Notas al crear los contenedores
+
+-Asegúrate de que los puertos (8080, 8081, 8082) estén libres antes de iniciar los contenedores.
+

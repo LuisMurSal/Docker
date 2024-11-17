@@ -1,4 +1,4 @@
-# Guía de Docker e Instalación de Aplicaciones
+# Guía de Docker e Instalación de Aplicaciones en Fedora
 
 ## ¿Qué es Docker?
 
@@ -11,26 +11,28 @@ Docker es una plataforma que permite crear, desplegar y ejecutar aplicaciones en
 
 ---
 
-## Instalación de Docker
+## Instalación de Docker en Fedora
 
 1. **Actualizar repositorios del sistema:**
    ```bash
-   sudo apt update && sudo apt upgrade -y
+   sudo dnf update -y
 2. **Instalar dependencias:**
    ```bash
-   sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-3. **Añadir la clave GPG de Docker:**
+   sudo dnf install dnf-plugins-core -y
+3. **Añadir el repositorio de Docker:**
    ```bash
-   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-4. **Añadir el repositorio de Docker:**
+   sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+4. **Instalar Docker:**
    ```bash
-   echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-5. **Instalar Docker:**
+   sudo dnf install docker-ce docker-ce-cli containerd.io -y
+5. **Iniciar y habilitar el servicio de Docker**
    ```bash
-   sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
-6. **Verificar instalación:**
+   sudo systemctl start docker
+   sudo systemctl enable docker
+6. **Iniciar y habilitar el servicio de Docker**
    ```bash
    docker --version
+
 ## Aplicaciones para instalar con Docker
 
 ## 1. CodeLink
